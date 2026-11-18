@@ -1,0 +1,12 @@
+services:
+  taskflow-api:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:h2:file:/app/data/taskflow
+    volumes:
+      - taskflow-data:/app/data
+
+volumes:
+  taskflow-data:
